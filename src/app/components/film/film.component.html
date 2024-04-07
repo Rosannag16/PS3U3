@@ -1,0 +1,8 @@
+<app-navbar-film></app-navbar-film>
+<div *ngFor="let movie of popularMovies">
+    <h2>{{ movie.title }}</h2>
+    <p>{{ movie.overview }}</p>
+    <img [src]="movie.poster_path" alt="{{ movie.title }}">
+    <!-- Altre informazioni sul film... -->
+  </div>
+  

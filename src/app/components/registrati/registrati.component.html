@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+            <h1>Registrati</h1>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">Email non valida o obbligatoria</div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+            <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">La password deve essere lunga almeno 6 caratteri</div>
+          </div>
+          <div class="form-group">
+            <label for="name">Nome</label>
+            <input type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f['name'].errors }">
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback">Il nome è obbligatorio</div>
+          </div>
+          <button type="submit" class="btn btn-primary">Registrati</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  
